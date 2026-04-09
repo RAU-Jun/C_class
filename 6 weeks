@@ -1,0 +1,123 @@
+#include <stdio.h>
+#include <math.h>
+
+void factorial();
+long long factorial_func(int);
+void sine();
+void logBase10();
+void sqrt_();
+void permutation();
+void combination();
+
+int menu(void) {
+	int n;
+	printf("1. 펙토리얼\n");
+	printf("2. 싸인\n");
+	printf("3. 상용로그\n");
+	printf("4. 제곱근\n");
+	printf("5. 순열(nPr)\n");
+	printf("6. 조합(nCr)\n");
+	printf("7. 종료\n");
+	printf("번호를 선택해주세요.\n");
+	scanf_s("%d", &n);
+	return 0;
+}
+
+int main(void) {
+	while (1) {
+		switch (menu())
+		{
+		case 1:
+			factorial();
+			break;
+		case 2:
+			sine();
+			break;
+		case 3:
+			logBase10();
+			break;
+		case 4:
+			sqrt_();
+			break;
+		case 5:
+			permutation();
+			break;
+		case 6:
+			combination();
+			break;
+		case 7:
+			printf("종료합니다. \n");
+			return 0;
+		default:
+			printf("잘못된 입력입니다. \n");
+			break;
+		}
+	}
+}
+
+long long factorial_func(int n) {
+	long long result = 1;
+	for (int i = 2; i <= n; i++)
+		result *= i;
+	return result;
+}
+
+void factorial() {
+	int n;
+	printf("정수를 입력하시오: ");
+	scanf_s("%d", &n);
+	if (n < 0)
+		printf("오류\n\n");
+	else
+		printf("결과 = %lld\n\n", factorial_func(n));
+}
+
+void sine() {
+	double a, result;
+	printf("각도를 입력하시오: ");
+	scanf_s("%lf", &a);
+	result = sin(a * 3.141592 / 180.0);
+	printf("결과 = %lf\n\n", &result);
+}
+
+void logBase10() {
+	double a, result;
+	printf("실수 값을 입력하시오: ");
+	scanf_s("%lf", &a);
+	if (a <= 0.0)
+		printf("오류\n");
+	else
+	{
+		result = log10(a);
+		printf("결과 = %lf\n\n", result);
+	}
+}
+
+void sqrt_() {
+	double a, result;
+	printf("실수 값을 입룍하시오: ");
+	scanf_s("%lf", &a);
+	if (a <= 0)
+		printf("오류\n");
+	else
+	{
+		result = sqrt(a);
+		printf("결과 = %lf\n\n", result);
+	}
+}
+
+void permutation() {
+	int n, r;
+	printf("정수 값의 쌍을 입력하시오: ");
+	scanf_s("%d, %d", &n, &r);
+	if ()
+		printf("오류\n");
+	else
+	{
+		result = ;
+		printf("nPr의 결과 = %d\n\n", result);
+	}
+}
+void combination() {
+
+}
