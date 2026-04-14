@@ -2,7 +2,7 @@
 #include <math.h>
 
 void factorial();
-long long factorial_func(int);
+long long factorial_func(int);	//순열, 조합 계산을 위해 추가
 void sine();
 void logBase10();
 void sqrt_();
@@ -19,7 +19,7 @@ int menu(void) {
 	printf("6. 조합(nCr)\n");
 	printf("7. 종료\n");
 	printf("번호를 선택해주세요.\n");
-	scanf_s("%d", &n);
+	scanf_s("	%d", &n);
 	return 0;
 }
 
@@ -110,14 +110,23 @@ void permutation() {
 	int n, r;
 	printf("정수 값의 쌍을 입력하시오: ");
 	scanf_s("%d, %d", &n, &r);
-	if ()
+	if (n < r || n < 0 || r < 0)
 		printf("오류\n");
 	else
 	{
-		result = ;
+		long long result = factorial_func(n) / factorial_func(n - r);
 		printf("nPr의 결과 = %d\n\n", result);
 	}
 }
 void combination() {
-
+	int n, r;
+	printf("정수 값의 쌍을 입력하시오: ");
+	scanf_s("%d, %d", &n, &r);
+	if (n < r || n < 0 || r < 0)
+		printf("오류\n");
+	else
+	{
+		long long result = factorial_func(n) / factorial_func(r) * factorial_func(n - r);
+		printf("nPr의 결과 = %d\n\n", result);
+	}
 }
